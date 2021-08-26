@@ -15,11 +15,10 @@ import (
 	"github.com/Thewalkers2012/BlogBackend/repository/redis"
 	"github.com/Thewalkers2012/BlogBackend/routes"
 	"github.com/Thewalkers2012/BlogBackend/settings"
+	"github.com/Thewalkers2012/BlogBackend/util/snowflake"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 )
-
-// Go Web 开发较通用的脚手架模版
 
 func main() {
 	// 1. 加载配置文件
@@ -56,6 +55,12 @@ func main() {
 	server := &http.Server{
 		Addr:    fmt.Sprintf(":%d", viper.GetInt("app.port")),
 		Handler: r,
+	}
+
+	// 7. 初始化雪花算法
+	if err := snowflake.Init(settings.Config.StartTime, settings.Config.MachineID); err != nil {
+		zap.L().Fatal("init snowflake failed", zap.Error(err))
+		return
 	}
 
 	go func() {
