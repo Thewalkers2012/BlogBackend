@@ -1,27 +1,6 @@
-{"level":"DEBUG","time":"2021-08-27T05:21:58.971+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"DEBUG","time":"2021-08-27T05:22:27.450+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"FATAL","time":"2021-08-27T05:22:27.451+0800","caller":"BlogBackend/main.go:62","msg":"init snowflake failed","error":"parsing time \"\" as \"2006-01-02\": cannot parse \"\" as \"2006\""}
-{"level":"DEBUG","time":"2021-08-27T05:23:37.033+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"FATAL","time":"2021-08-27T05:23:37.034+0800","caller":"BlogBackend/main.go:63","msg":"init snowflake failed","error":"parsing time \"\" as \"2006-01-02\": cannot parse \"\" as \"2006\""}
-{"level":"DEBUG","time":"2021-08-27T05:25:02.100+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"FATAL","time":"2021-08-27T05:25:02.101+0800","caller":"BlogBackend/main.go:63","msg":"init snowflake failed","error":"parsing time \"\" as \"2006-01-02\": cannot parse \"\" as \"2006\""}
-{"level":"DEBUG","time":"2021-08-27T05:26:10.049+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"FATAL","time":"2021-08-27T05:26:10.050+0800","caller":"BlogBackend/main.go:64","msg":"init snowflake failed","error":"parsing time \"\" as \"2006-01-02\": cannot parse \"\" as \"2006\""}
-{"level":"DEBUG","time":"2021-08-27T05:26:20.072+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"FATAL","time":"2021-08-27T05:26:20.073+0800","caller":"BlogBackend/main.go:64","msg":"init snowflake failed","error":"parsing time \"\" as \"2006-01-02\": cannot parse \"\" as \"2006\""}
-{"level":"DEBUG","time":"2021-08-27T05:28:37.580+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"INFO","time":"2021-08-27T05:28:51.651+0800","caller":"BlogBackend/main.go:78","msg":"Shutdown Server ..."}
-{"level":"INFO","time":"2021-08-27T05:28:51.653+0800","caller":"BlogBackend/main.go:86","msg":"Server exiting"}
-{"level":"DEBUG","time":"2021-08-27T06:56:23.578+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"DEBUG","time":"2021-08-27T06:56:37.540+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"INFO","time":"2021-08-27T06:58:07.784+0800","caller":"BlogBackend/main.go:77","msg":"Shutdown Server ..."}
-{"level":"INFO","time":"2021-08-27T06:58:07.787+0800","caller":"BlogBackend/main.go:85","msg":"Server exiting"}
-{"level":"DEBUG","time":"2021-08-27T06:58:34.583+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"INFO","time":"2021-08-27T07:01:47.061+0800","caller":"BlogBackend/main.go:77","msg":"Shutdown Server ..."}
-{"level":"INFO","time":"2021-08-27T07:01:47.062+0800","caller":"BlogBackend/main.go:85","msg":"Server exiting"}
-{"level":"DEBUG","time":"2021-08-27T07:02:18.382+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
-{"level":"INFO","time":"2021-08-27T07:02:26.725+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000163846}
-{"level":"ERROR","time":"2021-08-27T07:02:47.763+0800","caller":"controller/user.go:19","msg":"SignUp with invalid param","error":"unexpected EOF"}
-{"level":"INFO","time":"2021-08-27T07:02:47.764+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.00014198}
-{"level":"INFO","time":"2021-08-27T07:04:08.177+0800","caller":"BlogBackend/main.go:77","msg":"Shutdown Server ..."}
-{"level":"INFO","time":"2021-08-27T07:04:08.179+0800","caller":"BlogBackend/main.go:85","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T07:07:55.657+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T07:08:17.136+0800","caller":"controller/user.go:28","msg":"SignUp with invalid param"}
+{"level":"INFO","time":"2021-08-27T07:08:17.136+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.00017542}
+{"level":"INFO","time":"2021-08-27T07:08:25.319+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000044502}
+{"level":"INFO","time":"2021-08-27T07:13:17.893+0800","caller":"BlogBackend/main.go:77","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T07:13:17.895+0800","caller":"BlogBackend/main.go:85","msg":"Server exiting"}
