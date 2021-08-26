@@ -5,6 +5,7 @@ bin-release/
 [Bb]in/
 .vscode
 BLOG.session.sql
+web_app.log
 
 # Other files and folders
 .settings/
