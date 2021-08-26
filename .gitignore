@@ -3,6 +3,8 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+.vscode
+BLOG.session.sql
 
 # Other files and folders
 .settings/
