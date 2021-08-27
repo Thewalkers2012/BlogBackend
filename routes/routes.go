@@ -9,7 +9,13 @@ import (
 	"github.com/spf13/viper"
 )
 
-func Setup() *gin.Engine {
+func Setup(mode string) *gin.Engine {
+	if mode == "dev" {
+		gin.SetMode(gin.DebugMode)
+	} else {
+		gin.SetMode(gin.ReleaseMode)
+	}
+
 	r := gin.New()
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 
