@@ -91,3 +91,19 @@
 {"level":"INFO","time":"2021-08-28T00:31:01.544+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.054728193}
 {"level":"INFO","time":"2021-08-28T00:31:04.736+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2021-08-28T00:31:04.737+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-28T02:49:34.403+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"DEBUG","time":"2021-08-28T02:49:50.488+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-08-28T02:50:35.367+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.060945833}
+{"level":"INFO","time":"2021-08-28T02:51:06.746+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-28T02:51:06.748+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-28T02:51:10.571+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-08-28T02:51:13.878+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.055177394}
+{"level":"INFO","time":"2021-08-28T03:13:13.339+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-28T03:13:13.340+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-28T03:13:16.835+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-08-28T03:13:55.806+0800","caller":"logger/logger.go:82","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.00012853}
+{"level":"INFO","time":"2021-08-28T03:14:04.339+0800","caller":"logger/logger.go:82","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000029813}
+{"level":"INFO","time":"2021-08-28T03:14:12.807+0800","caller":"logger/logger.go:82","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.00004016}
+{"level":"INFO","time":"2021-08-28T03:14:24.369+0800","caller":"logger/logger.go:82","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000085882}
+{"level":"INFO","time":"2021-08-28T03:15:08.079+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-28T03:15:08.081+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
