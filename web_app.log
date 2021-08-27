@@ -15,3 +15,50 @@
 {"level":"DEBUG","time":"2021-08-27T22:25:05.633+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
 {"level":"INFO","time":"2021-08-27T22:25:18.844+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2021-08-27T22:25:18.846+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T22:37:18.061+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T22:37:24.953+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2021-08-27T22:37:24.953+0800","caller":"logger/logger.go:82","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000175066}
+{"level":"INFO","time":"2021-08-27T22:37:46.873+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T22:37:46.874+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T22:38:09.015+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-08-27T22:38:14.580+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T22:38:14.582+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T22:39:53.210+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T22:39:55.490+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2021-08-27T22:39:55.490+0800","caller":"logger/logger.go:82","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.00023173}
+{"level":"INFO","time":"2021-08-27T22:40:03.511+0800","caller":"logger/logger.go:82","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.062865806}
+{"level":"INFO","time":"2021-08-27T22:40:19.658+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T22:40:19.659+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T23:09:15.891+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-08-27T23:09:28.396+0800","caller":"logger/logger.go:82","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.062378951}
+{"level":"INFO","time":"2021-08-27T23:10:17.858+0800","caller":"logger/logger.go:82","msg":"/login/","status":404,"method":"POST","path":"/login/","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000000629}
+{"level":"INFO","time":"2021-08-27T23:10:23.311+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T23:10:23.313+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T23:10:25.978+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-08-27T23:10:29.768+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.053674569}
+{"level":"ERROR","time":"2021-08-27T23:10:34.475+0800","caller":"controller/user.go:58","msg":"server.Login failed","error":"密码错误"}
+{"level":"INFO","time":"2021-08-27T23:10:34.475+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.053783778}
+{"level":"INFO","time":"2021-08-27T23:10:55.935+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T23:10:55.936+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T23:11:00.208+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T23:11:03.140+0800","caller":"controller/user.go:59","msg":"server.Login failed","error":"密码错误"}
+{"level":"INFO","time":"2021-08-27T23:11:03.140+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.053898641}
+{"level":"ERROR","time":"2021-08-27T23:11:09.135+0800","caller":"controller/user.go:48","msg":"Login with valid param","error":"Key: 'ParamLogin.userna' Error:Field validation for 'userna' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T23:11:09.135+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000190383}
+{"level":"ERROR","time":"2021-08-27T23:11:36.004+0800","caller":"controller/user.go:48","msg":"Login with valid param","error":"Key: 'ParamLogin.password' Error:Field validation for 'password' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T23:11:36.004+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000114245}
+{"level":"INFO","time":"2021-08-27T23:11:56.228+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.056428461}
+{"level":"ERROR","time":"2021-08-27T23:12:16.433+0800","caller":"controller/user.go:48","msg":"Login with valid param","error":"Key: 'ParamLogin.userna' Error:Field validation for 'userna' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T23:12:16.433+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000285385}
+{"level":"ERROR","time":"2021-08-27T23:12:27.138+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.userna' Error:Field validation for 'userna' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T23:12:27.138+0800","caller":"logger/logger.go:82","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000172975}
+{"level":"INFO","time":"2021-08-27T23:13:02.072+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T23:13:02.073+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T23:14:41.309+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T23:14:43.676+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.userna' Error:Field validation for 'userna' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T23:14:43.676+0800","caller":"logger/logger.go:82","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000320423}
+{"level":"INFO","time":"2021-08-27T23:14:49.797+0800","caller":"logger/logger.go:82","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.062047147}
+{"level":"ERROR","time":"2021-08-27T23:15:01.062+0800","caller":"controller/user.go:59","msg":"server.Login failed","username":"thewalkers12345","error":"用户不存在"}
+{"level":"INFO","time":"2021-08-27T23:15:01.063+0800","caller":"logger/logger.go:82","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000892505}
+{"level":"INFO","time":"2021-08-27T23:15:20.966+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T23:15:20.968+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}

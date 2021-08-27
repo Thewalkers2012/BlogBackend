@@ -25,3 +25,13 @@ func SignUp(req *models.ParamSignUp) (err error) {
 	// 4. 保存进数据库
 	return mysql.CreateUser(&u)
 }
+
+func Login(req *models.ParamLogin) (err error) {
+	// 1. 判断用户是否存在
+	u := &models.User{
+		Username: req.Username,
+		Password: req.Password,
+	}
+
+	return mysql.Login(u)
+}

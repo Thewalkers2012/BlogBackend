@@ -79,3 +79,12 @@ func removeTopStruct(fields map[string]string) map[string]string {
 // 		sl.ReportError(su.RePassword, "re_password", "RePassword", "eqfield", "password")
 // 	}
 // }
+
+func getErrorMessage(err error) interface{} {
+	errs, ok := err.(validator.ValidationErrors)
+	if ok {
+		return removeTopStruct(errs.Translate(trans))
+	} else {
+		return err.Error()
+	}
+}

@@ -21,6 +21,8 @@ func Setup(mode string) *gin.Engine {
 
 	// 注册业务路由
 	r.POST("/signup", controller.SignUpHandler)
+	// 登录业务路由
+	r.POST("/login", controller.LoginHandler)
 
 	r.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, viper.GetString("app.version"))

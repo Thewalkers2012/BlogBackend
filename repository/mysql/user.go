@@ -1,6 +1,7 @@
 package mysql
 
 import (
+	"database/sql"
 	"errors"
 
 	"github.com/Thewalkers2012/BlogBackend/models"
@@ -9,10 +10,10 @@ import (
 
 // CheckUserExist 检查指定用户名的用户是否存在
 func CheckUserExist(username string) error {
-	sql := `select count(user_id) from user where username = ?`
+	query := `select count(user_id) from user where username = ?`
 
 	var count int64
-	if err := db.Get(&count, sql, username); err != nil {
+	if err := db.Get(&count, query, username); err != nil {
 		return err
 	}
 	if count > 0 {
@@ -31,7 +32,27 @@ func CreateUser(user *models.User) (err error) {
 	}
 
 	// 执行 sql 语句
-	sql := `insert into user(user_id, username, password) values(?, ?, ?)`
-	_, err = db.Exec(sql, user.UserID, user.Username, hashedPassword)
+	query := `insert into user(user_id, username, password) values(?, ?, ?)`
+	_, err = db.Exec(query, user.UserID, user.Username, hashedPassword)
 	return
+}
+
+// LoginUser 检查用户存在，并且密码相等
+func Login(user *models.User) error {
+	password := user.Password
+
+	query := `select user_id, username, password from user where username = ?`
+	if err := db.Get(user, query, user.Username); err != nil {
+		if err == sql.ErrNoRows {
+			return errors.New("用户不存在")
+		}
+		return errors.New("数据库内部错误")
+	}
+
+	// 判断密码是否相等
+	if err := util.CheckPassword(password, user.Password); err != nil {
+		return errors.New("密码错误")
+	}
+
+	return nil
 }
