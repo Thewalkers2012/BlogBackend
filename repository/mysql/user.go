@@ -8,6 +8,12 @@ import (
 	"github.com/Thewalkers2012/BlogBackend/util"
 )
 
+var (
+	ErrorUserExist       = errors.New("用户已经存在")
+	ErrorUserNotExist    = errors.New("用户不存在")
+	ErrorInValidPassword = errors.New("密码错误")
+)
+
 // CheckUserExist 检查指定用户名的用户是否存在
 func CheckUserExist(username string) error {
 	query := `select count(user_id) from user where username = ?`
@@ -17,7 +23,7 @@ func CheckUserExist(username string) error {
 		return err
 	}
 	if count > 0 {
-		return errors.New("用户已经存在")
+		return ErrorUserExist
 	}
 
 	return nil
@@ -44,14 +50,14 @@ func Login(user *models.User) error {
 	query := `select user_id, username, password from user where username = ?`
 	if err := db.Get(user, query, user.Username); err != nil {
 		if err == sql.ErrNoRows {
-			return errors.New("用户不存在")
+			return ErrorUserNotExist
 		}
-		return errors.New("数据库内部错误")
+		return err
 	}
 
 	// 判断密码是否相等
 	if err := util.CheckPassword(password, user.Password); err != nil {
-		return errors.New("密码错误")
+		return ErrorInValidPassword
 	}
 
 	return nil
