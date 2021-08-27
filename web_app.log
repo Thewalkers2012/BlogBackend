@@ -4,3 +4,47 @@
 {"level":"INFO","time":"2021-08-27T07:08:25.319+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000044502}
 {"level":"INFO","time":"2021-08-27T07:13:17.893+0800","caller":"BlogBackend/main.go:77","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2021-08-27T07:13:17.895+0800","caller":"BlogBackend/main.go:85","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T20:12:54.958+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
+{"level":"DEBUG","time":"2021-08-27T20:13:59.540+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-08-27T20:14:01.768+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000155511}
+{"level":"ERROR","time":"2021-08-27T20:14:10.094+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T20:14:10.094+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000107626}
+{"level":"INFO","time":"2021-08-27T20:14:22.041+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000044826}
+{"level":"INFO","time":"2021-08-27T20:14:26.493+0800","caller":"BlogBackend/main.go:77","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T20:14:26.494+0800","caller":"BlogBackend/main.go:85","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T20:14:34.434+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T20:14:40.769+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T20:14:40.769+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000246016}
+{"level":"INFO","time":"2021-08-27T20:14:47.081+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000044667}
+{"level":"INFO","time":"2021-08-27T20:14:49.467+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000045189}
+{"level":"ERROR","time":"2021-08-27T20:14:53.677+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.Username' Error:Field validation for 'Username' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T20:14:53.677+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000111961}
+{"level":"INFO","time":"2021-08-27T20:15:13.858+0800","caller":"BlogBackend/main.go:77","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T20:15:13.859+0800","caller":"BlogBackend/main.go:85","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T20:15:16.742+0800","caller":"BlogBackend/main.go:36","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-08-27T20:15:18.910+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000126199}
+{"level":"ERROR","time":"2021-08-27T20:15:22.162+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T20:15:22.162+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000158317}
+{"level":"INFO","time":"2021-08-27T20:18:19.649+0800","caller":"BlogBackend/main.go:77","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T20:18:19.651+0800","caller":"BlogBackend/main.go:85","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T20:26:41.679+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T20:26:43.059+0800","caller":"controller/user.go:19","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T20:26:43.059+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000200115}
+{"level":"INFO","time":"2021-08-27T20:30:14.056+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T20:30:14.058+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T20:30:16.890+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T20:30:20.681+0800","caller":"controller/user.go:19","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T20:30:20.681+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000247024}
+{"level":"INFO","time":"2021-08-27T20:33:17.585+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T20:33:17.587+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T20:33:20.202+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T20:33:22.490+0800","caller":"controller/user.go:19","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'required' tag"}
+{"level":"INFO","time":"2021-08-27T20:33:22.490+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000166629}
+{"level":"INFO","time":"2021-08-27T20:33:40.499+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.00003621}
+{"level":"INFO","time":"2021-08-27T20:34:36.569+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T20:34:36.571+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-27T20:34:38.702+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"ERROR","time":"2021-08-27T20:34:41.951+0800","caller":"controller/user.go:19","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2021-08-27T20:34:41.951+0800","caller":"logger/logger.go:70","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000198993}
+{"level":"INFO","time":"2021-08-27T20:35:07.200+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T20:35:07.202+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}

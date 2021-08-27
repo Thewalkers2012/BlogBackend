@@ -10,6 +10,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/Thewalkers2012/BlogBackend/controller"
 	"github.com/Thewalkers2012/BlogBackend/logger"
 	"github.com/Thewalkers2012/BlogBackend/repository/mysql"
 	"github.com/Thewalkers2012/BlogBackend/repository/redis"
@@ -60,6 +61,11 @@ func main() {
 	// 7. 初始化雪花算法
 	if err := snowflake.Init(settings.Config.StartTime, settings.Config.MachineID); err != nil {
 		zap.L().Fatal("init snowflake failed", zap.Error(err))
+		return
+	}
+	// 8. 初始化 gin 框架内置的校验器使用的翻译器
+	if err := controller.InitTrans("zh"); err != nil {
+		fmt.Printf("init validator trans failed, err: %v\n", err)
 		return
 	}
 
