@@ -1,0 +1,4 @@
+{"level":"DEBUG","time":"2021-08-31T15:36:41.722+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"DEBUG","time":"2021-08-31T15:36:56.061+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-08-31T15:37:01.342+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-31T15:37:01.343+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
