@@ -7,7 +7,6 @@ import (
 	"github.com/Thewalkers2012/BlogBackend/logger"
 	"github.com/Thewalkers2012/BlogBackend/middleware"
 	"github.com/gin-gonic/gin"
-	"github.com/spf13/viper"
 )
 
 func Setup(mode string) *gin.Engine {
@@ -20,18 +19,24 @@ func Setup(mode string) *gin.Engine {
 	r := gin.New()
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 
-	// 注册业务路由
-	r.POST("/signup", controller.SignUpHandler)
-	// 登录业务路由
-	r.POST("/login", controller.LoginHandler)
-	// token 测试
-	r.GET("/ping", middleware.JWTAuthorMiddleware(), func(c *gin.Context) {
-		// 如果是登录的用户，判断请求头中是否有有效的 JWT token
-		c.JSON(http.StatusOK, "ok")
-	})
+	v1 := r.Group("/api/v1")
 
-	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, viper.GetString("app.version"))
+	// 注册业务路由
+	v1.POST("/signup", controller.SignUpHandler)
+	// 登录业务路由
+	v1.POST("/login", controller.LoginHandler)
+
+	v1.Use(middleware.JWTAuthorMiddleware()) // 应用 JWT 中间件
+	// token 测试
+	{
+		v1.GET("/community", controller.CommunityHandler)
+		v1.GET("/community/:id", controller.CommunityDetailsHandler)
+	}
+
+	r.NoRoute(func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "404",
+		})
 	})
 
 	return r
