@@ -12,3 +12,10 @@ type Post struct {
 	Title       string    `json:"title" db:"title" binding:"required"`
 	CreateTime  time.Time `json:"create_time" db:"create_time"`
 }
+
+// ApiPostDetail 帖子详情接口结构体
+type ApiPostDetail struct {
+	AuthorName        string `json:"author_name"`
+	*Post             `json:"post"`
+	*CommunityDetails `json:"community"`
+}
