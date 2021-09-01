@@ -25,12 +25,19 @@ CREATE TABLE `community` (
     UNIQUE KEY `idx_community_id` (`community_id`),
     UNIQUE KEY `idx_community_name` (`community_name`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
--- DROP TABLE IF EXISTS `post`;
--- CREATE TABLE `post` (
---     `id` BIGINT NOT NULL AUTO_INCREMENT,
---     `post_id` BIGINT(20) NOT NULL COMMENT '帖子id',
---     `title` VARCHAR(128) COLLATE utf8mb4_general_ci NOT NULL COMMENT '标题',
---     `content` VARCHAR(8192) COLLATE utf8mb4_general_ci NOT NULL COMMENT '内容',
---     `author_id` BIGINT(20) NOT NULL COMMENT '作者的用户id',
---     ``
--- );
+DROP TABLE IF EXISTS `post`;
+CREATE TABLE `post` (
+    `id` BIGINT NOT NULL AUTO_INCREMENT,
+    `post_id` BIGINT(20) NOT NULL COMMENT '帖子id',
+    `title` VARCHAR(128) COLLATE utf8mb4_general_ci NOT NULL COMMENT '标题',
+    `content` VARCHAR(8192) COLLATE utf8mb4_general_ci NOT NULL COMMENT '内容',
+    `author_id` BIGINT(20) NOT NULL COMMENT '作者的用户id',
+    `community_id` BEGIN(20) NOT NULL COMMENT '所属社区',
+    `stastus` TINYINT(4) NOT NULL DPEFAULT '1' COMMENT '帖子状态',
+    `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `idx_post_id` (`post_id`),
+    KEY `idx_author_id` (`author_id`),
+    KEY `idx_community_id` (`community_id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
