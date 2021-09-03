@@ -25,3 +25,26 @@
 {"level":"INFO","time":"2021-09-01T22:24:50.772+0800","caller":"logger/logger.go:82","msg":"/api/v1/post/2282238414688256","status":200,"method":"GET","path":"/api/v1/post/2282238414688256","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.00138443}
 {"level":"INFO","time":"2021-09-01T22:25:59.627+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2021-09-01T22:25:59.629+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-09-03T14:22:10.117+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"DEBUG","time":"2021-09-03T14:22:31.235+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-09-03T14:24:05.266+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000060998}
+{"level":"INFO","time":"2021-09-03T14:24:10.265+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.02034209}
+{"level":"INFO","time":"2021-09-03T14:24:54.990+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.008358642}
+{"level":"INFO","time":"2021-09-03T14:25:04.289+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.001036755}
+{"level":"INFO","time":"2021-09-03T14:25:45.828+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.003572345}
+{"level":"INFO","time":"2021-09-03T14:25:51.048+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.001513921}
+{"level":"INFO","time":"2021-09-03T14:34:25.590+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-03T14:34:25.592+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-09-03T14:34:29.423+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-09-03T14:35:05.730+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000187991}
+{"level":"INFO","time":"2021-09-03T14:35:36.226+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-03T14:35:36.228+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-09-03T14:35:39.902+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-09-03T14:35:41.869+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000142943}
+{"level":"INFO","time":"2021-09-03T14:36:26.204+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"page_num=1&page_size=2","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.001905508}
+{"level":"INFO","time":"2021-09-03T14:36:32.398+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"page_num=1&page_size=3","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.001694433}
+{"level":"INFO","time":"2021-09-03T14:36:38.170+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"page_num=1&page_size=1","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.001889381}
+{"level":"INFO","time":"2021-09-03T14:36:43.251+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"page_num=1&page_size=asdas","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000099888}
+{"level":"INFO","time":"2021-09-03T14:36:52.810+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"page_num=2&page_size=1","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.001476936}
+{"level":"INFO","time":"2021-09-03T14:37:11.307+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-03T14:37:11.309+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}

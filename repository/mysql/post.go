@@ -16,3 +16,13 @@ func GetPostByID(pid int64) (data *models.Post, err error) {
 	err = db.Get(data, query, pid)
 	return
 }
+
+// GetPostList 返回 Post 列表
+func GetPostList(offset, limit int64) (data []*models.Post, err error) {
+	query := `select post_id, title, content, author_id, community_id, create_time from post limit ?, ?`
+
+	data = make([]*models.Post, 0, 2)
+	err = db.Select(&data, query, (offset-1)*limit, limit)
+
+	return
+}

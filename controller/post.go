@@ -61,3 +61,36 @@ func GetPostDetailHandler(ctx *gin.Context) {
 	// 3. 返回相应
 	response.ResponseSuccess(ctx, data)
 }
+
+// GetPostListHandler 获取帖子列表的处理函数
+func GetPostListHandler(ctx *gin.Context) {
+	// 获取参数
+	pageNum := ctx.Query("page_num")
+	pageSize := ctx.Query("page_size")
+
+	var (
+		limit  int64
+		offset int64
+		err    error
+	)
+	offset, err = strconv.ParseInt(pageNum, 10, 64)
+	if err != nil {
+		response.ResponseError(ctx, response.CodeInvalidParam)
+		return
+	}
+
+	limit, err = strconv.ParseInt(pageSize, 10, 64)
+	if err != nil {
+		response.ResponseError(ctx, response.CodeInvalidParam)
+		return
+	}
+
+	// 获取数据
+	data, err := server.GetPostList(offset, limit)
+	if err != nil {
+		zap.L().Error("server.GetPostList() failed", zap.Error(err))
+		return
+	}
+	// 返回相应
+	response.ResponseSuccess(ctx, data)
+}
