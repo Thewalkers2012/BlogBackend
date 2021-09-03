@@ -1,0 +1,2 @@
+{"level":"INFO","time":"2021-09-03T20:02:41.450+0800","caller":"BlogBackend/main.go:83","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-03T20:02:41.452+0800","caller":"BlogBackend/main.go:91","msg":"Server exiting"}

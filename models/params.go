@@ -15,3 +15,10 @@ type ParamLogin struct {
 	Username string `json:"username" binding:"required"`
 	Password string `json:"password" binding:"required"`
 }
+
+// 投票所需要的数据
+type ParamVoteData struct {
+	// UserID 从请求中获取当前的用户 id
+	PostID    int64 `json:"post_id,string" binding:"required"`                // 帖子 id
+	Direction int   `json:"direction,string" binding:"required,oneof=0 1 -1"` // 赞成票 (1) 还是反对票 (-1) 取消投票 (0)
+}
