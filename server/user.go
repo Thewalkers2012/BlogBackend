@@ -27,17 +27,23 @@ func SignUp(req *models.ParamSignUp) (err error) {
 	return mysql.CreateUser(&u)
 }
 
-func Login(req *models.ParamLogin) (string, error) {
+func Login(req *models.ParamLogin) (user *models.User, err error) {
 	// 1. 判断用户是否存在
-	user := &models.User{
+	user = &models.User{
 		Username: req.Username,
 		Password: req.Password,
 	}
 
 	if err := mysql.Login(user); err != nil {
-		return "", err
+		return nil, err
 	}
 	// 由于传递的是指针，当前的u已经有 user_id
 	// 即可生成 jwt token
-	return jwt.ReleaseToken(user)
+	token, err := jwt.ReleaseToken(user)
+	if err != nil {
+		return nil, err
+	}
+
+	user.Token = token
+	return
 }

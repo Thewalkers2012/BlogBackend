@@ -2,6 +2,7 @@ package controller
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/Thewalkers2012/BlogBackend/models"
 	"github.com/Thewalkers2012/BlogBackend/repository/mysql"
@@ -62,7 +63,7 @@ func LoginHandler(ctx *gin.Context) {
 	}
 
 	// 2. 业务逻辑处理
-	token, err := server.Login(req)
+	user, err := server.Login(req)
 	if err != nil {
 		zap.L().Error("server.Login failed", zap.String("username", req.Username), zap.Error(err))
 		if errors.Is(err, mysql.ErrorUserNotExist) {
@@ -77,6 +78,8 @@ func LoginHandler(ctx *gin.Context) {
 
 	// 4. 返回相应
 	response.ResponseSuccess(ctx, gin.H{
-		"token": token,
+		"user_id":   fmt.Sprintf("%d", user.UserID),
+		"user_name": user.Username,
+		"token":     user.Token,
 	})
 }
