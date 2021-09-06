@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"github.com/go-redis/redis"
-	"go.uber.org/zap"
 )
 
 const (
@@ -45,6 +44,7 @@ func VoteForPost(userID, postID string, value float64) error {
 	if time.Now().Unix()-int64(postTime) > oneWeekInSeconds {
 		return ErrorVoteTimeExpire // 时间超过一个星期就不能再进行投票了
 	}
+	// 2 和 3 需要放到一个 pipeline 事务中去操作
 	// 2. 更新分数
 	// 先查当前用户给当前帖子的投票记录
 	ov := client.ZScore(getRedisKey(KeyPostVotedPrefix+postID), userID).Val()
@@ -56,29 +56,40 @@ func VoteForPost(userID, postID string, value float64) error {
 	}
 	diff := math.Abs(ov - value) // 计算两次投票的差值
 	// 原子性地增加分数
-	_, err := client.ZIncrBy(getRedisKey(KeyPostScoreZset), op*diff*scorePerVote, postID).Result()
-	if err != nil {
-		return err
-	}
+	pipeline := client.TxPipeline()
+	pipeline.ZIncrBy(getRedisKey(KeyPostScoreZset), op*diff*scorePerVote, postID)
 	// 3. 记录用户为该帖子投过票的数据
 	if value == 0 {
 		// 移除
-		_, err = client.ZRem(getRedisKey(KeyPostVotedPrefix+postID), userID).Result()
+		pipeline.ZRem(getRedisKey(KeyPostVotedPrefix+postID), userID)
 	} else {
-		_, err = client.ZAdd(getRedisKey(KeyPostVotedPrefix+postID), redis.Z{
+		pipeline.ZAdd(getRedisKey(KeyPostVotedPrefix+postID), redis.Z{
 			Score:  value, // 赞成票还是反对票
 			Member: userID,
-		}).Result()
+		})
 	}
+
+	_, err := pipeline.Exec()
 
 	return err
 }
 
 func CreatePost(postID int64) error {
-	_, err := client.ZAdd(getRedisKey(KeyPostTimeZset), redis.Z{
+	// 帖子时间
+	pipeline := client.TxPipeline()
+
+	pipeline.ZAdd(getRedisKey(KeyPostTimeZset), redis.Z{
 		Score:  float64(time.Now().Unix()),
-		Member: nil,
-	}).Result()
-	zap.L().Error("redis.CreatePost() failed, ", zap.Error(err))
+		Member: postID,
+	})
+
+	// 帖子分数
+	pipeline.ZAdd(getRedisKey(KeyPostScoreZset), redis.Z{
+		Score:  float64(time.Now().Unix()),
+		Member: postID,
+	})
+
+	_, err := pipeline.Exec()
+
 	return err
 }

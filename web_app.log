@@ -1,0 +1,30 @@
+{"level":"DEBUG","time":"2021-09-06T18:01:34.435+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"DEBUG","time":"2021-09-06T18:01:37.822+0800","caller":"server/vote.go:39","msg":"VoteForPost","userID":1971052083154944,"postID":"4136009906262016","direction":1}
+{"level":"ERROR","time":"2021-09-06T18:01:37.822+0800","caller":"controller/vote.go:35","msg":"server.VoteForPost() failed","error":"投票时间已过"}
+{"level":"INFO","time":"2021-09-06T18:01:37.823+0800","caller":"logger/logger.go:82","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.001209546}
+{"level":"INFO","time":"2021-09-06T18:09:38.614+0800","caller":"BlogBackend/main.go:84","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-06T18:09:38.616+0800","caller":"BlogBackend/main.go:92","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-09-06T18:09:57.294+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"DEBUG","time":"2021-09-06T18:10:02.448+0800","caller":"server/vote.go:39","msg":"VoteForPost","userID":1971052083154944,"postID":"4136009906262016","direction":1}
+{"level":"ERROR","time":"2021-09-06T18:10:02.448+0800","caller":"controller/vote.go:35","msg":"server.VoteForPost() failed","error":"投票时间已过"}
+{"level":"INFO","time":"2021-09-06T18:10:02.449+0800","caller":"logger/logger.go:82","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000878502}
+{"level":"INFO","time":"2021-09-06T18:12:27.509+0800","caller":"BlogBackend/main.go:84","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-06T18:12:27.511+0800","caller":"BlogBackend/main.go:92","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-09-06T18:14:04.227+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-09-06T18:14:13.469+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.008870857}
+{"level":"INFO","time":"2021-09-06T18:14:18.598+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"GET","path":"/api/v1/post","query":"page_num=1&page_size=12","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.004088733}
+{"level":"DEBUG","time":"2021-09-06T18:14:43.673+0800","caller":"server/vote.go:39","msg":"VoteForPost","userID":1971052083154944,"postID":"4140841140490240","direction":1}
+{"level":"INFO","time":"2021-09-06T18:14:43.674+0800","caller":"logger/logger.go:82","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000806789}
+{"level":"INFO","time":"2021-09-06T18:27:42.266+0800","caller":"BlogBackend/main.go:84","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-06T18:27:42.268+0800","caller":"BlogBackend/main.go:92","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-09-06T18:33:11.954+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"INFO","time":"2021-09-06T18:33:26.560+0800","caller":"logger/logger.go:82","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000153044}
+{"level":"INFO","time":"2021-09-06T18:34:32.959+0800","caller":"BlogBackend/main.go:84","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-06T18:34:32.961+0800","caller":"BlogBackend/main.go:92","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-09-06T18:34:36.246+0800","caller":"BlogBackend/main.go:37","msg":"logger init success ..."}
+{"level":"DEBUG","time":"2021-09-06T18:34:40.313+0800","caller":"server/vote.go:39","msg":"VoteForPost","userID":1971052083154944,"postID":"4140841140490240","direction":0}
+{"level":"INFO","time":"2021-09-06T18:34:40.314+0800","caller":"logger/logger.go:82","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000927985}
+{"level":"DEBUG","time":"2021-09-06T18:35:36.383+0800","caller":"server/vote.go:39","msg":"VoteForPost","userID":1971052083154944,"postID":"4140841140490240","direction":1}
+{"level":"INFO","time":"2021-09-06T18:35:36.383+0800","caller":"logger/logger.go:82","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000522883}
+{"level":"INFO","time":"2021-09-06T18:52:02.981+0800","caller":"BlogBackend/main.go:84","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-06T18:52:02.983+0800","caller":"BlogBackend/main.go:92","msg":"Server exiting"}

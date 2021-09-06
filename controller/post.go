@@ -94,3 +94,40 @@ func GetPostListHandler(ctx *gin.Context) {
 	// 返回相应
 	response.ResponseSuccess(ctx, data)
 }
+
+// GetPostListBySomeHandler 根据时间顺序或者是分数大小进行获取帖子的列表
+// 升级版帖子列表接口，按照时间或者按照分数进行排序
+// 1. 获取参数
+// 2. 去 redis 中查询 id 列表
+// 3. 根据 id 去数据库中查询帖子详细信息
+func GetPostListBySomeHandler(ctx *gin.Context) {
+	// 获取参数
+	pageNum := ctx.Query("page_num")
+	pageSize := ctx.Query("page_size")
+
+	var (
+		limit  int64
+		offset int64
+		err    error
+	)
+	offset, err = strconv.ParseInt(pageNum, 10, 64)
+	if err != nil {
+		response.ResponseError(ctx, response.CodeInvalidParam)
+		return
+	}
+
+	limit, err = strconv.ParseInt(pageSize, 10, 64)
+	if err != nil {
+		response.ResponseError(ctx, response.CodeInvalidParam)
+		return
+	}
+
+	// 获取数据
+	data, err := server.GetPostList(offset, limit)
+	if err != nil {
+		zap.L().Error("server.GetPostList() failed", zap.Error(err))
+		return
+	}
+	// 返回相应
+	response.ResponseSuccess(ctx, data)
+}

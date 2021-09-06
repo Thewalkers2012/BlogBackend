@@ -63,6 +63,7 @@ func main() {
 		zap.L().Fatal("init snowflake failed", zap.Error(err))
 		return
 	}
+
 	// 8. 初始化 gin 框架内置的校验器使用的翻译器
 	if err := controller.InitTrans("zh"); err != nil {
 		fmt.Printf("init validator trans failed, err: %v\n", err)
