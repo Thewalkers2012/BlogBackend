@@ -6,10 +6,10 @@ import (
 	"github.com/Thewalkers2012/BlogBackend/server"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
+	"go.uber.org/zap"
 )
 
 // 投票
-
 func PostVoteHandler(ctx *gin.Context) {
 	// 参数校验
 	req := new(models.ParamVoteData)
@@ -24,7 +24,18 @@ func PostVoteHandler(ctx *gin.Context) {
 		return
 	}
 
-	server.PostVote()
+	// 获取当前请求的用户 id
+	userID, err := getCurrentUser(ctx)
+	if err != nil {
+		response.ResponseError(ctx, response.CodeNeedLogin)
+		return
+	}
+
+	if err := server.VoteForPost(userID, req); err != nil {
+		zap.L().Error("server.VoteForPost() failed", zap.Error(err))
+		response.ResponseError(ctx, response.CodeServerBusy)
+		return
+	}
 
 	response.ResponseSuccess(ctx, nil)
 }
