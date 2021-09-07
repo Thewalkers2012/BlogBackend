@@ -21,6 +21,20 @@ import (
 	"go.uber.org/zap"
 )
 
+// @title Blog
+// @version 1.0
+// @description 用 Go 语言实现的博客后端代码 Api
+// @termsOfService http://swagger.io/terms/
+
+// @contact.name thewalkers
+// @contact.url http://www.swagger.io/support
+// @contact.email 1518832673@qq.com
+
+// @license.name Apache 2.0
+// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
+
+// @host 127.0.0.1
+// @BasePath /swagger
 func main() {
 	// 1. 加载配置文件
 	if err := settings.Init(); err != nil {

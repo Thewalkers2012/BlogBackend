@@ -95,11 +95,25 @@ func GetPostListHandler(ctx *gin.Context) {
 	response.ResponseSuccess(ctx, data)
 }
 
-// GetPostListBySomeHandler 根据时间顺序或者是分数大小进行获取帖子的列表
-// 升级版帖子列表接口，按照时间或者按照分数进行排序
-// 1. 获取参数
-// 2. 去 redis 中查询 id 列表
-// 3. 根据 id 去数据库中查询帖子详细信息
+/**
+GetPostListBySomeHandler 根据时间顺序或者是分数大小进行获取帖子的列表
+升级版帖子列表接口，按照时间或者按照分数进行排序
+1. 获取参数
+2. 去 redis 中查询 id 列表
+3. 根据 id 去数据库中查询帖子详细信息
+*/
+
+// GetPostListBySomeHandler 升级版帖子列表接口
+// @Summary 升级版帖子列表接口
+// @Description 可按社区按时间或分数排序查询帖子列表接口
+// @Tags 帖子相关接口
+// @Accept application/json
+// @Produce application/json
+// @Param Authorization header string false "Bearer 用户令牌"
+// @Param object query models.ParamPostList false "查询参数"
+// @Security ApiKeyAuth
+// @Success 200 {object} _ResponsePostList
+// @Router /posts2 [get]
 func GetPostListBySomeHandler(ctx *gin.Context) {
 	// 获取参数
 	// 初始化结构体时，指定初始参数

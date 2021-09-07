@@ -25,9 +25,9 @@ type ParamVoteData struct {
 
 // 分页所需要的参数
 type ParamPostList struct {
-	Page        int64  `form:"page"`
-	Size        int64  `form:"size"`
-	Order       string `form:"order"`
+	Page        int64  `form:"page"`                             // 页码
+	Size        int64  `form:"size"`                             // 每页的数据量
+	Order       string `form:"order"`                            // 排序依据
 	CommunityID int64  `json:"community_id" form:"community_id"` // 可以为空
 }
 
