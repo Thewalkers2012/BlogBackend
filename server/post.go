@@ -16,7 +16,7 @@ func CreatePost(req *models.Post) (err error) {
 	if err != nil {
 		return err
 	}
-	return redis.CreatePost(req.ID)
+	return redis.CreatePost(req.ID, req.CommunityID)
 	// 3. 返回
 }
 
@@ -147,5 +147,75 @@ func GetPostList2(req *models.ParamPostList) (data []*models.ApiPostDetail, err 
 		data = append(data, postDetail)
 	}
 
+	return
+}
+
+// 获取社区帖子列表
+func GetCommunityPostList2(req *models.ParamPostList) (data []*models.ApiPostDetail, err error) {
+	// 2. 去 redis 中查询 id 列表
+	ids, err := redis.GetComunityPostIDsInOrder(req)
+	if err != nil {
+		return
+	}
+
+	if len(ids) == 0 {
+		// zap.L().Warn("redis.GetPostList2(req) return 0 data")
+		zap.L().Warn("redis.GetPostList2(req) return 0 data")
+		return
+	}
+	// 3. 根据 id 去 mysql 数据库中查询帖子详细信息
+	// 返回的数据要按照 给定的 id 进行返回
+	posts, err := mysql.GetPostListByIDs(ids)
+	if err != nil {
+		return
+	}
+
+	data = make([]*models.ApiPostDetail, 0, len(posts))
+	// 提前查询好数据
+
+	voteData, err := redis.GetPostVoteData(ids)
+	if err != nil {
+		return
+	}
+
+	// 将帖子的作者及分区信息查询，并返回
+	for idx, post := range posts {
+		user, err := mysql.GetUserByID(post.AuthorID)
+		if err != nil {
+			zap.L().Error("mysql.GetUserByID(post.AuthorID) failed",
+				zap.Int64("author_id", post.AuthorID),
+				zap.Error(err))
+			return nil, err
+		}
+
+		// 根据社区 id 查询社区信息
+		community, err := mysql.GetCommunityDetailsByID(post.CommunityID)
+		if err != nil {
+			zap.L().Error("mysql.GetCommunityDetailsByID(post.CommunityID) failed",
+				zap.Int64("community_id", post.CommunityID),
+				zap.Error(err))
+			return nil, err
+		}
+
+		postDetail := &models.ApiPostDetail{
+			VoteNum:          voteData[idx],
+			AuthorName:       user.Username,
+			Post:             post,
+			CommunityDetails: community,
+		}
+
+		data = append(data, postDetail)
+	}
+
+	return
+}
+
+// 将两个查询函数合二为一的函数
+func GetPostListNew(req *models.ParamPostList) (data []*models.ApiPostDetail, err error) {
+	if req.CommunityID == 0 {
+		data, err = GetPostList2(req)
+	} else {
+		data, err = GetCommunityPostList2(req)
+	}
 	return
 }

@@ -115,8 +115,7 @@ func GetPostListBySomeHandler(ctx *gin.Context) {
 		return
 	}
 
-	// 获取数据
-	data, err := server.GetPostList2(req)
+	data, err := server.GetPostListNew(req)
 	if err != nil {
 		zap.L().Error("server.GetPostList() failed", zap.Error(err))
 		return

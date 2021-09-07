@@ -1,6 +1,9 @@
 package redis
 
 import (
+	"strconv"
+	"time"
+
 	"github.com/Thewalkers2012/BlogBackend/models"
 	"github.com/go-redis/redis"
 )
@@ -42,4 +45,38 @@ func GetPostVoteData(ids []string) (data []int64, err error) {
 	}
 
 	return
+}
+
+// GetComunityPostIDsInOrder 按社区在 redis 中查找 ids
+func GetComunityPostIDsInOrder(req *models.ParamPostList) ([]string, error) {
+	// 使用 zinterstore 把分区的帖子 set 与 帖子分数的 zset 生成新的 zset
+	// 针对新的 zset 按之前的逻辑取数据
+
+	// 社区的 key
+	cKey := getRedisKey(KeyCommunitySetPrefix + strconv.Itoa(int(req.CommunityID)))
+	// 利用缓存 key 减少 zinterstore 执行的次数
+	orderKey := getRedisKey(KeyPostTimeZset)
+	if req.Order == models.OrderScore {
+		orderKey = getRedisKey(KeyPostScoreZset)
+	}
+
+	key := orderKey + strconv.Itoa(int(req.CommunityID))
+	if client.Exists(key).Val() < 1 {
+		// 不存在，需要计算
+		pipeline := client.Pipeline()
+		pipeline.ZInterStore(key, redis.ZStore{
+			Aggregate: "MAX",
+		}, cKey, orderKey) // zinterstore 计算
+		pipeline.Expire(key, 60*time.Second) // 设置超时
+		_, err := pipeline.Exec()
+		if err != nil {
+			return nil, err
+		}
+	}
+	// 2. 确定查询的索引起始点
+	start := (req.Page - 1) * req.Size
+	end := start + req.Size - 1
+
+	// 存在的话直接根据 key 来查询 ids
+	return client.ZRevRange(key, start, end).Result()
 }
