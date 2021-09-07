@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/go-redis/redis"
+	"go.uber.org/zap"
 )
 
 const (
@@ -15,6 +16,7 @@ const (
 
 var (
 	ErrorVoteTimeExpire = errors.New("投票时间已过")
+	ErrorVoteRepeated   = errors.New("不允许重复投票")
 )
 
 /*
@@ -48,6 +50,11 @@ func VoteForPost(userID, postID string, value float64) error {
 	// 2. 更新分数
 	// 先查当前用户给当前帖子的投票记录
 	ov := client.ZScore(getRedisKey(KeyPostVotedPrefix+postID), userID).Val()
+	// 如果这一次投票的值和之前的值保持一致，提醒不允许单独投票
+	if value == ov {
+		zap.L().Error("VoteForPost() failed", zap.Error(ErrorVoteRepeated))
+		return ErrorVoteRepeated
+	}
 	var op float64
 	if value > ov {
 		op = 1

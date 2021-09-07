@@ -15,4 +15,4 @@ func getRedisKey(key string) string {
 	return KeyPrefix + key
 }
 
-// "blog:post:time 4140841140490240"
+// "post:voted:4162959018299392"

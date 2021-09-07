@@ -102,28 +102,21 @@ func GetPostListHandler(ctx *gin.Context) {
 // 3. 根据 id 去数据库中查询帖子详细信息
 func GetPostListBySomeHandler(ctx *gin.Context) {
 	// 获取参数
-	pageNum := ctx.Query("page_num")
-	pageSize := ctx.Query("page_size")
-
-	var (
-		limit  int64
-		offset int64
-		err    error
-	)
-	offset, err = strconv.ParseInt(pageNum, 10, 64)
-	if err != nil {
-		response.ResponseError(ctx, response.CodeInvalidParam)
-		return
+	// 初始化结构体时，指定初始参数
+	req := &models.ParamPostList{
+		Page:  1,
+		Size:  10,
+		Order: models.OrderTime, // magic string
 	}
 
-	limit, err = strconv.ParseInt(pageSize, 10, 64)
-	if err != nil {
+	if err := ctx.ShouldBindQuery(req); err != nil {
+		zap.L().Error("GetPostListBySomeHandler with invalid param", zap.Error(err))
 		response.ResponseError(ctx, response.CodeInvalidParam)
 		return
 	}
 
 	// 获取数据
-	data, err := server.GetPostList(offset, limit)
+	data, err := server.GetPostList2(req)
 	if err != nil {
 		zap.L().Error("server.GetPostList() failed", zap.Error(err))
 		return
