@@ -2,6 +2,7 @@ package routes
 
 import (
 	"net/http"
+	"time"
 
 	_ "github.com/Thewalkers2012/BlogBackend/docs" // 千万不要忘了导入把你上一步生成的docs
 
@@ -21,8 +22,11 @@ func Setup(mode string) *gin.Engine {
 	}
 
 	r := gin.New()
-	r.Use(logger.GinLogger(), logger.GinRecovery(true))
+	r.Use(logger.GinLogger(), logger.GinRecovery(true), middleware.RateLimitMiddleware(time.Second*2, 1))
 
+	r.GET("/ping", func(c *gin.Context) {
+		c.String(http.StatusOK, "pong")
+	})
 	v1 := r.Group("/api/v1")
 
 	// 注册业务路由
